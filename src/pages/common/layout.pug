@@ -1,0 +1,37 @@
+doctype html
+html(lang="ru")
+  include data
+  include mixins
+
+  block config
+    - var title = ""
+    - var name = ""
+    - var page = ""
+
+  block head
+    head
+      meta(charset="UTF-8")
+      meta(http-equiv="X-UA-Compatible", content="IE=edge")
+      meta(name="viewport", content="width=device-width, initial-scale=1.0")
+      title #{title}
+      link(rel="stylesheet", href="css/style.min.css")
+      //- Favicon
+      link(rel="icon" href="favicon.svg")
+      link(rel="apple-touch-icon" href="apple-touch-icon.png")
+      //- Manifest
+      link(rel="manifest", href="manifest.json")
+  body
+    .page
+      block header
+        include header
+      block content
+      block footer
+        include footer
+    .mobile-menu
+      button#js-menu-close.mobile-menu__close-btn
+        +svgSprite("close", 23, 23)
+        span.visually-hidden Закрыть мобильное меню
+      .mobile-menu__content
+
+  script(src="js/app.min.js")
+  block scripts

@@ -1,0 +1,24 @@
+// ИСПОЛЬЗУЕМАЯ ПАЛИТРА
+$cl-white: #FFF;
+$cl-black: #000;
+
+// ФОН И ЦВЕТ ТЕКСТА
+$g-bg-color: $cl-bg;
+$g-text-color: $cl-black;
+
+// ШРИФТ ПО УМОЛЧАНИЮ
+$g-font-size: 16px;
+$g-font: "Roboto", Arial, sans-serif;
+$g-line-height: unset;
+
+// МАКС. ШИРИНА КОНТЕЙНЕРА
+$container-width: 1327px;
+
+// Разрешения
+// $desktop-sm: 1100px;
+// $tablet: 800px;
+// $mobile: 512px;
+
+// RETINA
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;

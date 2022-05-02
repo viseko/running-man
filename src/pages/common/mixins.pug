@@ -1,0 +1,6 @@
+mixin svgSprite(name, width, height)
+  svg(
+    width= width
+    height= height
+  )
+    use(xlink:href= "img/icons/icons.svg#" + name)
