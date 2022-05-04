@@ -1,18 +1,22 @@
 // ИСПОЛЬЗУЕМАЯ ПАЛИТРА
 $cl-white: #FFF;
 $cl-black: #000;
+$cl-silver: #F8F8F8;
+$cl-orange: #E46035;
+$cl-blue: #0D5DA2;
+
 
 // ФОН И ЦВЕТ ТЕКСТА
-$g-bg-color: $cl-bg;
+$g-bg-color: $cl-white;
 $g-text-color: $cl-black;
 
 // ШРИФТ ПО УМОЛЧАНИЮ
 $g-font-size: 16px;
-$g-font: "Roboto", Arial, sans-serif;
+$g-font: "Roboto", Tahoma, sans-serif;
 $g-line-height: unset;
 
 // МАКС. ШИРИНА КОНТЕЙНЕРА
-$container-width: 1327px;
+$container-width: 1200px;
 
 // Разрешения
 // $desktop-sm: 1100px;

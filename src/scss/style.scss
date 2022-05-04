@@ -9,7 +9,13 @@
 @import "layout";
 
 // ОБЩИЕ БЛОКИ
-// @import "blocks/name"
+@import "blocks/order";
 
 // СЕКЦИИ ГЛАВНОЙ СТРАНИЦЫ
 @import "sections/section";
+@import "sections/page-header";
+@import "sections/page-footer";
+@import "sections/main-section";
+@import "sections/info";
+@import "sections/advantages";
+@import "sections/goods";

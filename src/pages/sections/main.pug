@@ -1,0 +1,30 @@
+section.main
+  .container
+    h1.visually-hidden Курьерская служба "Бегущий Человек"
+
+    .main__logo
+      .main__logo-man
+        img(src="@img/logo/logo.svg",
+            alt="Курьерская служба \"Бегущий Человек\"",
+            width="340",
+            height="257")
+      .main__logo-text
+        img(src="@img/logo/logo-text.svg",
+            alt="Курьерская служба \"Бегущий Человек\"",
+            width="340",
+            height="257")
+
+    .main__order
+      form.order
+        header.order__header
+          strong Закажите звонок
+          p
+           | И мы свяжемся с вами в течение 5 минут.<br>Заявки принимаются с 9:00 до 21:00.
+        .order__main
+          input.order__field(type="text" placeholder="Как к вам обращаться?" name="name" required)
+          input.order__field(type="text" placeholder="Ваш телефон" name="phone" required)
+          .order__checkbox
+            input#accept-personal-data(type="checkbox", name="accept-personal-data" required)
+            label(for="accept-personal-data")
+             | Даю согласие на обработку персональных данных
+          button.btn.order__btn(type="submit") Отправить
