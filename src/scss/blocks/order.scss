@@ -1,0 +1,101 @@
+.order {
+  padding: 40px 35px 25px;
+  color: $cl-white;
+  background-image: linear-gradient($cl-orange, $cl-blue);
+}
+
+.order__header {
+  margin-bottom: 20px;
+  font-size: 14px;
+
+  strong {
+    display: block;
+    margin-bottom: 9px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+.order__body {
+  // Пока не требуется
+}
+
+.order__field {
+  display: block;
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 16px;
+  color: $cl-black;
+  border: 0;
+  border-radius: 5px;
+
+  &:focus {
+    outline-color: $cl-orange;
+  }
+
+  &::placeholder {
+    color: #B5B5B5;
+  }
+}
+
+.order__checkbox {
+  margin-bottom: 22px;
+  font-size: 14px;
+  user-select: none;
+
+  label {
+    position: relative;
+    display: block;
+    max-width: 250px;
+    padding-left: 50px;
+    cursor: pointer;
+  }
+
+  label::before,
+  label::after {
+    content: "";
+    position: absolute;
+  }
+
+  label::before {
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    background-color: $cl-white;
+    border-radius: 5px;
+    opacity: 0.9;
+    transition: 0.1s;
+  }
+
+  label:hover::before {
+    opacity: 1;
+  }
+
+  label:active::before {
+    opacity: 0.9;
+  }
+
+  label::after {
+    top: 4px;
+    left: 4px;
+    width: 24px;
+    height: 24px;
+    background-image: url("data:image/svg+xml;charset=UTF-8, %3csvg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'%3e%3ctitle%3eCheckmark%3c/title%3e%3cpath fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='32' d='M416 128L192 384l-96-96'/%3e%3c/svg%3e");
+    transform-origin: center;
+    transform: scale(0);
+    transition: 0.2s;
+  }
+
+  input:checked + label::after {
+    transform: scale(1);
+  }
+
+  input:focus + label::before {
+    outline: 2px solid $cl-orange;
+  }
+}
+
+.order__btn {
+  width: 100%;
+}

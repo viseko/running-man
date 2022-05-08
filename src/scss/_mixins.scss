@@ -39,7 +39,7 @@
 }
 
 // 3. Диагональный угол вверху блока
-@mixin diagonal($height, $color) {
+@mixin diagonal-top($height, $color) {
   position: relative;
 
   &::before {
@@ -51,7 +51,24 @@
     width: 100%;
     height: $height;
 
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 10 10'%3E%3Cpath fill='none' d='M-1-1h12v12H-1z'/%3E%3Cg%3E%3Cpath d='M0 10h10V0L0 10z' fill='%23#{$color}'/%3E%3C/g%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 10 10'%3E%3Cpath fill='none' d='M-1-1h12v12H-1z'/%3E%3Cg%3E%3Cpath d='M0 10h10V0L0 10z' fill='%23#{$color}' fill-rule='evenodd' /%3E%3C/g%3E%3C/svg%3E");
+    background-size: 100%;
+  }
+}
+
+// 3.1 Диагональный угол внизу блока
+@mixin diagonal-bottom($height, $color) {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: $height;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 10 10'%3E%3Cpath fill='none' d='M-1-1h12v12H-1z'/%3E%3Cg%3E%3Cpath d='M0 10h10V0L0 10z' fill='%23#{$color}' fill-rule='evenodd' /%3E%3C/g%3E%3C/svg%3E");
     background-size: 100%;
   }
 }
