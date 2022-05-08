@@ -92,7 +92,8 @@
   }
 
   input:focus + label::before {
-    outline: 2px solid $cl-orange;
+    outline: none;
+    box-shadow: 0 0 0 2px $cl-orange;
   }
 }
 
