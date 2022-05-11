@@ -1,0 +1,142 @@
+.page-footer {
+  padding: 40px 0;
+  color: $cl-white;
+  font-size: 14px;
+  background-color: $cl-darkblue;
+
+  a {
+    transition: 0.1s color;
+  }
+
+  a:hover {
+    color: $cl-orange;
+  }
+
+  a:active {
+    opacity: 0.6;
+  }
+}
+
+.page-footer__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-footer__left {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.page-footer__right {
+  display: flex;
+  flex-grow: 2;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-footer__logo {
+  width: 107px;
+  height: 81px;
+  margin-right: 22px;
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.page-footer__main-text {
+  line-height: 170%;
+}
+
+.page-footer__contacts {
+  // Пока не требуется
+}
+
+.page-footer__contact-row {
+  display: flex;
+  margin-bottom: 15px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.page-footer__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-right: 18px;
+  color: $cl-orange;
+}
+
+.page-footer__chedule {
+
+}
+
+.page-footer__title {
+  margin-bottom: 6px;
+  font-size: 16px;
+  font-family: "RobotoCondensed";
+  font-weight: bold;
+}
+
+.page-footer__chedule-text {
+  line-height: 175%;
+}
+
+@media (max-width: 950px) {
+  .page-footer__right {
+    flex-direction: column;
+    flex-grow: 0;
+    align-items: start;
+  }
+
+  .page-footer__contacts {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 675px) {
+  .page-footer__container {
+    flex-direction: column;
+  }
+
+  .page-footer__left {
+    margin-bottom: 30px;
+  }
+
+  .page-footer__right {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .page-footer__contacts {
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .page-footer__left {
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+
+  .page-footer__right {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .page-footer__contacts {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+

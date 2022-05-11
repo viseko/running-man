@@ -1,2 +1,35 @@
 footer.page__footer.page-footer
-  .container
+  .container.page-footer__container
+    .page-footer__left
+      .page-footer__logo
+        img(
+          src="@img/logo/logo-min.svg",
+          alt="Курьерская Слудба Бегущий Человек",
+          width="107",
+          height="80"
+        )
+      .page-footer__main-text
+        | Курьерская служба “Бегущий Человек”
+        br
+        | г. Красноярск, ул. Горького, 18
+
+    .page-footer__right
+      .page-footer__contacts
+        .page-footer__contact-row
+          .page-footer__icon
+            +svgSprite("phone", 16, 16)
+          a(href="tel:+72324444422") +7 (232) 444-44-22
+        .page-footer__contact-row
+          .page-footer__icon
+            +svgSprite("mail", 20, 16)
+          a(href="mailto:running-man124@yandex.ru") running-man124@yandex.ru
+
+      .page-footer__chedule
+        .page-footer__contact-row.page-footer__title
+          .page-footer__icon
+            +svgSprite("time", 20, 20)
+          b Режим работы:
+        p.page-footer__chedule-text
+          | Круглосуточно, без выходных
+          br
+          | Приём заявок с 9:00 до 21:00
