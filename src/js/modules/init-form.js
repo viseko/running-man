@@ -80,6 +80,7 @@ export function initForm(formSelector, options) {
   function setSuccessState() {
     form.classList.add(successClass);
     form.reset();
+    submitBtn.disabled = true;
   }
 
   function setErrorState() {
@@ -90,7 +91,6 @@ export function initForm(formSelector, options) {
     form.classList.remove(submitClass);
 
     form.querySelectorAll("input").forEach(i => i.disabled = false);
-    submitBtn.disabled = false;
   }
 
   function resetStates() {
