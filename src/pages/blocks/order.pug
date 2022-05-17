@@ -1,0 +1,23 @@
+form.order
+  header.order__header
+    strong Закажите звонок
+    p
+      | И мы свяжемся с вами в течение 5 минут.<br>Заявки принимаются с 9:00 до 21:00.
+  .order__body
+    input.order__field(type="text" placeholder="Как к вам обращаться?" name="name" required)
+    input.order__field(type="tel" placeholder="Ваш телефон" name="phone" required)
+    .order__checkbox
+      input#accept-personal-data.visually-hidden(type="checkbox", name="accept-personal-data" required)
+      label(for="accept-personal-data")
+        | Даю согласие на обработку персональных данных
+    button.btn.order__btn(type="submit")
+      span.order__btn-text Отправить
+      span.order__btn-text--submit Загрузка
+  //- Сообщение формы
+  .order__message
+    .order__message-text
+      p.order__message-error
+        | Не удалось отправить данные. Пожалуйста, повторите попытку позже.
+      p.order__message-success
+        | Мы получили ваше сообщение! В ближайшее время мы вам перезвоним!
+    button.btn.order__message-btn.js-order-form-close(type="button") Ок

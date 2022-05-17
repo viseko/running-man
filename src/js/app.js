@@ -1,30 +1,21 @@
 // ** ИМПОРТ МОДУЛЕЙ;
 import {isWebp} from "./modules/functions.js"; // - Коллекция фунций
-import {adaptiveMove} from "./modules/adaptive-move.js"; // - Адаптивный перенос
-// import {loadYandexMap} from "./modules/yandex-map.js"; // - Яндекс карты
+import {initForm} from "./modules/init-form.js";
 
 // ** ЗАПУСК ОСНОВНЫХ ФУНКЦИЙ
 isWebp();
-adaptiveMove(); // - адаптивный перенос элементов
+
+// ** ИНИЦИАЛИЗАЦИЯ ФОРМ ОБРАТНОЙ СВЯЗИ **
+initForm(".js-order-form-main", {
+  url: "https://running-man124.ru/send-form.php",
+  errorClass: "order--error",
+  submitClass: "order--submit",
+  successClass: "order--success",
+  closeBtnClass: ".js-order-form-close"
+});
 
 // ** СОСТОЯНИЯ СТРАНИЦЫ
 let isMenuOpened = false;
-
-// ** МОБИЛЬНОЕ МЕНЮ
-// const menuBtn = document.querySelector("#js-menu-btn");
-// const menuCloseBtn = document.querySelector("#js-menu-close");
-
-// function closeMenu() {
-//   document.documentElement.classList.remove("_menu-open");
-//   menuBtn.focus();
-//   isMenuOpened = false;
-// }
-
-// function openMenu() {
-//   document.documentElement.classList.add("_menu-open");
-//   menuCloseBtn.focus();
-//   isMenuOpened = true;
-// }
 
 // menuBtn.addEventListener("click", openMenu);
 // menuCloseBtn.addEventListener("click", closeMenu);

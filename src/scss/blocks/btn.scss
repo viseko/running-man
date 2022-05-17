@@ -9,11 +9,15 @@
   border-radius: 5px;
   transition: 0.1s background-color;
 
-  &:hover {
+  &:disabled {
+    background-color: lighten($cl-black, 30%);
+  }
+
+  &:hover:not(:disabled) {
     background-color: lighten($cl-orange, 5%);
   }
 
-  &:active {
+  &:active:not(:disabled) {
     opacity: 0.9;
   }
 }
