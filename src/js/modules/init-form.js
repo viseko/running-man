@@ -1,3 +1,5 @@
+import { addMask } from "./phone-mask.js";
+
 export function initForm(formSelector, options) {
   // Опции
   const {
@@ -30,10 +32,7 @@ export function initForm(formSelector, options) {
 
   // Ограничение ввода символов в поле для телефона
   const telField = form.querySelector("[type='tel']");
-  telField.addEventListener("input", function() {
-    const value = this.value;
-    this.value = value.replace(/[^\d\+\s\-]/g, "");
-  });
+  addMask(telField);
 
   // Отправка данных
   form.addEventListener("submit", sendFormData);
