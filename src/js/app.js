@@ -6,24 +6,61 @@ import {initForm} from "./modules/init-form.js";
 isWebp();
 
 // ** ИНИЦИАЛИЗАЦИЯ ФОРМ ОБРАТНОЙ СВЯЗИ **
-initForm(".js-order-form-main", {
-  url: "https://running-man124.ru/send-form.php",
+const formOptions = {
   errorClass: "order--error",
   submitClass: "order--submit",
   successClass: "order--success",
-  closeBtnClass: ".js-order-form-close"
+  closeBtnClass: ".js-order-form-close",
+  rules: {
+    "name": " a-zA-Zа-яА-ЯёЁ-"
+  },
+  formCloseCallback: null
+};
+
+[".js-order-form-main", ".js-order-form-modal"].forEach(formSelector => {
+  initForm(formSelector, formOptions);
 });
 
-// ** СОСТОЯНИЯ СТРАНИЦЫ
-let isMenuOpened = false;
+// ** МОДАЛЬНОЕ ОКНО
+const btnOpenModal = document.querySelector(".js-open-modal-form");
+const btnCloseModal = document.querySelector(".js-close-modal-form");
+const modalStateClass = "_modal-open";
 
-// menuBtn.addEventListener("click", openMenu);
-// menuCloseBtn.addEventListener("click", closeMenu);
+btnOpenModal.addEventListener("click", openModal);
+btnCloseModal.addEventListener("click", function(e) {
+  e.preventDefault();
 
-// ** ОВЕРЛЕЙ
-// const overlay = document.querySelector("#js-page-overlay");
-// overlay.onclick = () => {
-//   if (isMenuOpened) closeMenu();
-// };
+  closeModal();
+})
 
-// ** ОСТАЛЬНЫЕ СКРИПТЫ
+function openModal() {
+  document.body.classList.add(modalStateClass);
+}
+
+function closeModal() {
+  document.body.classList.remove(modalStateClass);
+  const modalFormCloseBtn = document.querySelector(".modal-form .order__message-btn");
+  modalFormCloseBtn.click();
+}
+
+// Узнаём ширину скролла и задаём переменную, которая будет использоваться
+// при body {overflow: hidden }
+const scrollWidth = getScrollWidth();
+document.body.style.setProperty("--scroll-width", `${scrollWidth}px`)
+console.log(scrollWidth);
+
+function getScrollWidth() {
+  // создадим элемент с прокруткой
+  let div = document.createElement('div');
+
+  div.style.overflowY = 'scroll';
+  div.style.width = '50px';
+  div.style.height = '50px';
+
+  // мы должны вставить элемент в документ, иначе размеры будут равны 0
+  document.body.append(div);
+  let scrollWidth = div.offsetWidth - div.clientWidth;
+  div.remove();
+
+  return scrollWidth;
+}

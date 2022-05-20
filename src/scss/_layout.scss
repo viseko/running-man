@@ -1,3 +1,7 @@
+body {
+  --scroll-width: 0;
+}
+
 .page {
   position: relative;
   display: flex;
@@ -11,6 +15,30 @@
 }
 
 .page__header {
+  // Пока не требуется
+}
+
+.page__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transition: 0.3s opacity;
+  pointer-events: none;
+}
+
+._modal-open .page__overlay {
+  opacity: 1;
+  pointer-events: all;
+}
+
+._modal-open {
+  overflow: hidden;
+  padding-right: var(--scroll-width);
 }
 
 .container {
