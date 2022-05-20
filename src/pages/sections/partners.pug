@@ -1,0 +1,13 @@
+mixin partnerItem(imgName, url, alt)
+  li.parners__item
+    a(href=url target="_blank" noopener noreferrer nofollow)
+      img(src=`@img/partners/${imgName}.png`, alt=alt)
+
+section.goods
+  .container.goods__container
+    h2.goods__title Наши партнёры
+    ul.partners
+      +partnerItem("airlab", "https://airlab-krsk.ru/", "Студия шаров Air Lab")
+      +partnerItem("fruket", "https://fruket-flowers.ru/", "Fruket – цветы и подарки")
+      +partnerItem("endorfin", "https://vk.com/endorfingift", "Эндорфин клубника и съедобные букеты Красноярск")
+      +partnerItem("vicon", "https://vk.com/vikonauto", "ВИКОН Официальный дилер автозапчастей ОПТ")
