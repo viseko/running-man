@@ -7,6 +7,7 @@ html(lang="ru")
     - var title = ""
     - var name = ""
     - var page = ""
+    - var description = ""
 
   block head
     head
@@ -16,7 +17,7 @@ html(lang="ru")
       title #{title}
       link(rel="stylesheet", href="css/style.min.css")
       //- SEO Meta-data
-      meta(name="description", content="Курьерская служба \"Бегущий Человек\". Доставка по г. Красноярску. Тел. +7 (232) 444-44-22")
+      meta(name="description", content=description)
       //- Favicon
       link(rel="icon" href="favicon.svg")
       link(rel="apple-touch-icon" href="apple-touch-icon.png")
