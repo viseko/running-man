@@ -1,0 +1,11 @@
+.decor-elem {
+  position: absolute;
+  z-index: 100;
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .decor-elem {
+    display: none;
+  }
+}

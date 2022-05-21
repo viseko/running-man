@@ -1,5 +1,5 @@
 .info {
-  padding: 80px 0 100px;
+  padding: 60px 0 30px;
 }
 
 .info__container {
@@ -61,6 +61,24 @@
     width: 11px;
     height: 15px;
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='11' height='15' viewBox='0 0 11 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0 0L11 7.5L0 15V0Z' fill='%23EB5F31'/%3e%3c/svg%3e ");
+  }
+}
+
+.info__decor-blue {
+  right: -66px;
+  bottom: -28px;
+}
+
+@media (max-width: 1349px) {
+  .info__decor-blue {
+    right: calc($container-width/2 - 50vw + 10px);
+    bottom: -28px;
+  }
+}
+
+@media (max-width: $container-width) {
+  .info__decor-blue {
+    right: 0;
   }
 }
 

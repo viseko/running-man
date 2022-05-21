@@ -46,8 +46,7 @@ function closeModal() {
 // Узнаём ширину скролла и задаём переменную, которая будет использоваться
 // при body {overflow: hidden }
 const scrollWidth = getScrollWidth();
-document.body.style.setProperty("--scroll-width", `${scrollWidth}px`)
-console.log(scrollWidth);
+document.body.style.setProperty("--scroll-width", `${scrollWidth}px`);
 
 function getScrollWidth() {
   // создадим элемент с прокруткой

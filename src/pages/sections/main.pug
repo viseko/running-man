@@ -1,6 +1,13 @@
 section.main
+
   .container.main__container
     h1.visually-hidden Курьерская служба "Бегущий Человек"
+
+    .decor-elem.main__decor-red
+      +svgSprite("red-2", 65, 83)
+
+    .decor-elem.main__decor-blue
+      +svgSprite("blue-1", 42, 33)
 
     .main__logo
       .main__logo-man
@@ -11,8 +18,8 @@ section.main
       .main__logo-text
         img(src="@img/logo/logo-text.svg",
             alt="Курьерская служба \"Бегущий Человек\"",
-            width="340",
-            height="257")
+            width="436",
+            height="86")
 
     .main__order.js-order-form-main
       - var formID = 1

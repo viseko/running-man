@@ -2,7 +2,7 @@
   $corner-height: 5.714vw;
 
   position: relative;
-  padding: $corner-height 0;
+  padding: calc($corner-height + 35px) 0;
   color: $cl-white;
   background-color: $cl-blue;
 
@@ -58,6 +58,41 @@
 
 .advantages__title {
  font-size: 20px;
+}
+
+.advantages__decor-red {
+  left: -53px;
+  top: -70px;
+}
+
+.advantages__decor-green {
+  right: 53px;
+  bottom: -120px;
+}
+
+@media (max-width: 1323px) {
+  .advantages__decor-red {
+    left: calc($container-width/2 - 50vw + 8px);
+  }
+}
+
+@media (max-width: $container-width) {
+  .advantages__decor-red {
+    left: 0;
+    top: unset;
+    bottom: -140px;
+  }
+
+  .advantages__decor-green {
+    right: -20px;
+    bottom: -450px;
+  }
+}
+
+@media (max-width: 950px) {
+  .advantages__decor-green {
+    bottom: -850px;
+  }
 }
 
 @media (max-width: 750px) {
