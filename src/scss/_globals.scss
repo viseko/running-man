@@ -4,20 +4,6 @@
   box-sizing: inherit;
 }
 
-.noscript {
-  margin: 0;
-  padding: 15px;
-
-  color: #fff;
-  text-align: center;
-
-  background-color: #f00;
-
-  &__link {
-    color: inherit;
-  }
-}
-
 .visually-hidden {
   position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
