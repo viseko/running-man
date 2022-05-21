@@ -54,8 +54,6 @@ export function initForm(formSelector, options) {
     const formData = new FormData(form);
     formData.set("phone", formData.get("phone").replace("+7", "8"));
 
-    console.log(formData.get("phone"));
-
     // Переводим форму в состояние отправки
     setSubmitState();
 
