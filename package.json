@@ -41,7 +41,6 @@
     "gulp-util": "latest",
     "gulp-version-number": "latest",
     "gulp-webp": "latest",
-    "gulp-webp-html-nosvg": "latest",
     "gulp-webpcss": "latest",
     "gulp-zip": "latest",
     "sass": "latest",

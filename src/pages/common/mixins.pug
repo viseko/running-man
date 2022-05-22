@@ -4,3 +4,43 @@ mixin svgSprite(name, width, height)
     height= height
   )
     use(xlink:href= "img/icons/icons.svg#" + name)
+
+mixin img(options)
+  - var src = options.src
+  - var width = options.width
+  - var height = options.height
+  - var alt = options.alt
+  - var x2 = options.x2
+  - var webp = options.webp
+  - var path = src.slice(0, src.lastIndexOf(".")) // img/imgname
+  - var format = src.slice(src.lastIndexOf(".")) // .jpg
+  - var className = options.className || ""
+  picture
+    if (webp)
+      if (x2)
+        source(
+          type="image/webp"
+          srcset=`${path}@2x.webp 2x`
+        )
+      source(
+        type="image/webp"
+        srcset=`${path}.webp`
+      )
+
+    if (x2)
+      img(
+        src=src
+        width=width
+        height=height
+        alt=alt
+        srcset=`${path}@2x${format} 2x`
+        class=className
+      )
+    else
+      img(
+        src=src
+        width=width
+        height=height
+        alt=alt
+        class=className
+      )

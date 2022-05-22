@@ -1,12 +1,14 @@
 mixin goods-item(imgname, text)
   li.goods__item
-    img.goods__item-image(
-      src=`img/goods/${imgname}.png`,
-      srcset=`img/goods/${imgname}@2x.png 2x`,
-      width="207",
-      height="166",
-      alt=text
-    )
+    +img({
+      src: `img/goods/${imgname}.png`,
+      width: "207",
+      height: "166",
+      alt: text,
+      className: ".goods__item-image",
+      x2: true,
+      webp: true
+    })
     .goods__item-text #{text}
 
 section.goods

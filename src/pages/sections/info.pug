@@ -6,13 +6,14 @@ section.info
     h2.visually-hidden Условия доставки
     .info__map
       .info__map-image
-        img(
-          src="img/map.png",
-          srcset="img/map@2x.png 2x",
-          alt="Карта России с выделенным Красноярским краем",
-          width="321",
-          height="189"
-        )
+        +img({
+          src: "img/map.png",
+          alt: "Карта России с выделенным Красноярским краем",
+          width: "321",
+          height: "189",
+          webp: "true",
+          x2: "true"
+        })
       .info__map-text
         | Оперативная доставка по Красноярску – это к нам!
     .info__conditions

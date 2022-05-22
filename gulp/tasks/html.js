@@ -1,5 +1,3 @@
-// import fileInclude from "gulp-file-include";
-import webpHtmlNosvg from "gulp-webp-html-nosvg";
 import versionNumber from "gulp-version-number";
 import pug from "gulp-pug";
 
@@ -14,11 +12,7 @@ export const html = () => {
     .pipe(pug({
       pretty: app.isDev
     }))
-    // .pipe(fileInclude()) // Используем для HTML
     .pipe(app.plugins.replace(/@img\//g, "img/"))
-    .pipe(
-        webpHtmlNosvg()
-    )
     .pipe(
       app.plugins.if(
         app.isBuild,

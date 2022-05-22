@@ -1,7 +1,13 @@
 mixin partnerItem(imgName, url, alt)
   li.parners__item
     a(href=url target="_blank" rel="noopener noreferrer nofollow")
-      img(src=`@img/partners/${imgName}.png`, alt=alt)
+      +img({
+        src:`@img/partners/${imgName}.png`,
+        alt: alt,
+        width: 150,
+        height: 150,
+        webp: true
+      })
 
 section.goods.partners__section
   .container.goods__container
