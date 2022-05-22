@@ -11,6 +11,7 @@ html(lang="ru")
 
   block head
     head
+      include metrika.pug
       meta(charset="UTF-8")
       meta(http-equiv="X-UA-Compatible", content="IE=edge")
       meta(name="viewport", content="width=device-width, initial-scale=1.0")
@@ -24,7 +25,6 @@ html(lang="ru")
       //- Manifest
       link(rel="manifest", href="manifest.json")
       //- Metrika
-      include metrika.pug
   body
     .page
       block header
