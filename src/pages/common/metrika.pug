@@ -9,4 +9,11 @@ script.
   accurateTrackBounce:true,
   webvisor:true
   })};
-  setTimeout(metrika, 1000);
+
+  let fired = false;
+  window.addEventListener("scroll", () => {
+    if (!fired) {
+      fired = true;
+      setTimeout(metrika, 1000)
+    }
+  });
