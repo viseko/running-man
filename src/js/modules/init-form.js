@@ -68,10 +68,13 @@ export function initForm(formSelector, options) {
       signal: controller.signal,
     }).then(response => response.text())
     .then(data => {
-      if (data !== "success") {
+      if (data === "success") {
+        setSuccessState();
+      } else if (data === "spam") {
+        setSpamState();
+      } else {
         throw new Error();
       }
-      setSuccessState();
     }).catch(setErrorState)
     .finally(unlockForm);
   }
@@ -104,6 +107,14 @@ export function initForm(formSelector, options) {
 
   function setErrorState() {
     form.classList.add(errorClass);
+    const msgElem = form.querySelector(".order__message-error");
+    msgElem.innerHTML = "Не удалось отправить данные. Пожалуйста, повторите попытку позже.";
+  }
+
+  function setSpamState() {
+    form.classList.add(errorClass);
+    const msgElem = form.querySelector(".order__message-error");
+    msgElem.innerHTML = "Мы тебя вычислили, злоебучий спамер! Упёрдывай отсюда нахуй!";
   }
 
   function unlockForm() {
